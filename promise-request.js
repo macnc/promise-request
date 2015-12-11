@@ -28,7 +28,7 @@ module.exports = function(options, body) {
         var module = options.scheme === 'https' ? https : http;
         var request = module.request(options, function(response) {
             if (response.statusCode >= 400) {
-                reject(response);
+                return reject(response);
             }
             var _data = '';
             response.on('data', function(data) {
