@@ -43,7 +43,7 @@ module.exports = function(options, body) {
                 reject(error);
             });
         });
-        request.on('error', function(e) => {
+        request.on('error', function(e) {
             reject(e);
         });
 
