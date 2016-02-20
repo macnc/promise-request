@@ -43,6 +43,10 @@ module.exports = function(options, body) {
                 reject(error);
             });
         });
+        request.on('error', function(e) => {
+            reject(e);
+        });
+
         if (body) {
             request.write(options.serialize(body));
         }
